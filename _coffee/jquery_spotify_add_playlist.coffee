@@ -6,7 +6,7 @@
   # Client ID from Spotify application here: https://developer.spotify.com
   client_id = 'ddc0558e4e404d179079f7cc33f0c6a9'
   # Make sure to set your redirect uri to:
-  redirect_uri = location.origin + '/spotify-callback'
+  redirect_uri = window.location.href + '/spotify-callback'
 
 	# These will be set dynamically
   g_access_token = ''
