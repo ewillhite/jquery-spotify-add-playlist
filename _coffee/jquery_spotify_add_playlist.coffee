@@ -129,6 +129,7 @@
   doit()
 
   $('button').click (e) ->
+  	console.log(encodeURIComponent(redirect_uri));
 	  g_tracks = $(this).data('track')
 	  spotifyLogin g_tracks
 	  e.preventDefault()
