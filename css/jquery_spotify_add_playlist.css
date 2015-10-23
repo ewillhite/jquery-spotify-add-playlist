@@ -1,69 +1,86 @@
-/*
-Error: Undefined mixin 'background'.
-        on line 11 of _scss/jquery_spotify_add_playlist.scss, in `background'
-        from line 11 of _scss/jquery_spotify_add_playlist.scss
+html {
+  box-sizing: border-box; }
 
-6:   $hero-background-bottom: #20392B;
-7:   $hero-color: white;
-8:   $gradient-angle: 10deg;
-9:   $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
-10: 
-11:   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-12:   background-color: #324766;
-13:   background-position: top;
-14:   background-repeat: no-repeat;
-15:   background-size: cover;
-16:   padding-bottom: 3em;
+*, *::after, *::before {
+  box-sizing: inherit; }
 
-Backtrace:
-_scss/jquery_spotify_add_playlist.scss:11:in `background'
-_scss/jquery_spotify_add_playlist.scss:11
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:98:in `block in with_mixin'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:98:in `with_mixin'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:412:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined mixin 'background'.\A         on line 11 of _scss/jquery_spotify_add_playlist.scss, in `background'\A         from line 11 of _scss/jquery_spotify_add_playlist.scss\A \A 6:   $hero-background-bottom: #20392B;\A 7:   $hero-color: white;\A 8:   $gradient-angle: 10deg;\A 9:   $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';\A 10: \A 11:   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);\A 12:   background-color: #324766;\A 13:   background-position: top;\A 14:   background-repeat: no-repeat;\A 15:   background-size: cover;\A 16:   padding-bottom: 3em;"; }
+a {
+  color: #2EBD59; }
+
+button {
+  background-color: #2EBD59;
+  border: none;
+  color: #181818;
+  font-weight: bold;
+  padding: 4.8% 7%; }
+  button:hover {
+    background-color: #181818;
+    color: #2EBD59; }
+
+header {
+  background-color: #181818;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em; }
+  header .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em; }
+  header .hero-inner {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    padding: 4.5em 0 1.5em;
+    text-align: center; }
+    header .hero-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
+    header .hero-inner::after {
+      clear: both;
+      content: "";
+      display: table; }
+    header .hero-inner .hero-copy {
+      text-align: center; }
+      header .hero-inner .hero-copy h1 {
+        color: white;
+        font-size: 1.6em;
+        margin-bottom: 0.5em; }
+        @media screen and (min-width: 53.75em) {
+          header .hero-inner .hero-copy h1 {
+            font-size: 1.8em; } }
+      header .hero-inner .hero-copy p {
+        color: white;
+        line-height: 1.4em;
+        margin: 0 auto 3em auto; }
+        @media screen and (min-width: 53.75em) {
+          header .hero-inner .hero-copy p {
+            font-size: 1.1em;
+            max-width: 40%; } }
+
+main {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 2em auto;
+  max-width: 40em;
+  text-align: center; }
+  main::after {
+    clear: both;
+    content: "";
+    display: table; }
+  main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  main li {
+    margin: 1em 0;
+    overflow: hidden; }
+  main button, main iframe {
+    display: block;
+    float: left;
+    margin: 0 1%;
+    width: 48%; }
+
+/*# sourceMappingURL=jquery_spotify_add_playlist.css.map */

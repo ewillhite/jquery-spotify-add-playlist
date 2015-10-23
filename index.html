@@ -1,21 +1,41 @@
 <html>
 <head>
-<script type="text/javascript" src="app.js"></script>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" />
+<link rel="stylesheet" href="css/jquery_spotify_add_playlist.css" />
 </head>
 <body>
 	<header>
 		<div class="hero-inner">
-	    <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png
-	" alt="Logo Image"></a>
 			<div class="hero-copy">
-				<h1>Short description of Product</h1>
-				<p>A few reasons why this product is worth using, who it's for and why they need it.</p>	
+				<h1>jQuery Spotify Add to Playlist Demo</h1>
+				<p>Sourcecode:<a href="https://github.com/electricthread/jquery-spotify-add-playlist">GitHub</a></p>	
 			</div>
 		</div>
 	</header>
-
 	<main>
+		<ul>
+			<li>
+				<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A6ToM0uwxtPKo9CMpbPGYvM" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+				<button>Add This Song to Playlist</button>
+			</li>
+			<li>
+				<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A6H3kDe7CGoWYBabAeVWGiD" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+				<button>Add This Song to Playlist</button>
+			</li>
+			<li>
+				<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A0wJoRiX5K5BxlqZTolB2LD" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+				<button>Add This Song to Playlist</button>
+			</li>
+		</ul>
 	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery_spotify_add_playlist.js"></script>
+	<script type="text/javascript" src="js/jquery_spotify_add_song.js"></script>
+	<script>
+    $('button').click(function(e) {
+      spotifyLogin();
+      e.preventDefault();
+    });
+	</script>
 </body>
 </html>

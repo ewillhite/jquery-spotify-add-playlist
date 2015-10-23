@@ -1,15 +1,36 @@
-.hero {  
-  $base-border-radius: 3px !default;
-  $action-color: #477DCA !default;
-  $large-screen: em(860) !default;
-  $hero-background-top: #7F99BE; 
-  $hero-background-bottom: #20392B;
-  $hero-color: white;
-  $gradient-angle: 10deg;
-  $hero-image: 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+@import "bourbon/bourbon";
+@import "neat/neat";
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-  background-color: #324766;
+$bg-color: #181818;
+$base-border-radius: 3px !default;
+$action-color: #2EBD59 !default;
+$large-screen: em(860) !default;
+$hero-background-top: #7F99BE; 
+$hero-background-bottom: #20392B;
+$hero-color: white;
+$gradient-angle: 10deg;
+
+// General
+a {
+	color: $action-color;
+}
+
+button {
+	background-color:$action-color;
+	border:none;
+	color:$bg-color;
+	font-weight:bold;
+	padding:4.8% 7%;
+
+	&:hover {
+		background-color:$bg-color;
+		color: $action-color;
+	}
+}
+
+// Header
+header {  
+  background-color: $bg-color;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +45,7 @@
     @include outer-container;
     @include clearfix;
     margin: auto;
-    padding: 3.5em;
+    padding: 4.5em 0 1.5em;
     text-align: center;
 
     .hero-copy {
@@ -52,4 +73,30 @@
       }
     }
   }
+}
+
+// Main
+main {
+	@include outer-container;
+	margin:2em auto;
+	max-width: 40em;
+	text-align:center;
+
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+
+	li {
+		margin: 1em 0;
+		overflow: hidden;
+	}
+
+	button, iframe {
+		display: block;
+		float: left;
+		margin: 0 1%;
+		width: 48%;
+	}
 }
