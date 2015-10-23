@@ -7,6 +7,7 @@
   client_id = 'ddc0558e4e404d179079f7cc33f0c6a9'
   # Make sure to set your redirect uri to:
   redirect_uri = window.location.href + 'spotify-callback'
+  console.log(redirect_uri);
 
 	# These will be set dynamically
   g_access_token = ''
@@ -129,7 +130,6 @@
   doit()
 
   $('button').click (e) ->
-  	console.log(encodeURIComponent(redirect_uri));
 	  g_tracks = $(this).data('track')
 	  spotifyLogin g_tracks
 	  e.preventDefault()

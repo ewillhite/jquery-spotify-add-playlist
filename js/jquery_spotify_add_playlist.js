@@ -3,7 +3,8 @@
     var addTracksToPlaylist, client_id, createPlaylist, doit, g_access_token, g_name, g_tracks, g_username, getUsername, redirect_uri, spotifyLogin;
     g_name = 'My Special Playlist';
     client_id = 'ddc0558e4e404d179079f7cc33f0c6a9';
-    redirect_uri = location.origin + '/spotify-callback';
+    redirect_uri = window.location.href + 'spotify-callback';
+    console.log(redirect_uri);
     g_access_token = '';
     g_username = '';
     g_tracks = [];
