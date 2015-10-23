@@ -1,0 +1,21 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon
+
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# Grunt and SASS #
+##########
+Gruntfile.js
+package.json
+.sass-cache
+node_modules
+bourbon
+neat
