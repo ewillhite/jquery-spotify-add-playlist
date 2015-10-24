@@ -3,8 +3,11 @@
     var addTracksToPlaylist, client_id, createPlaylist, doit, g_access_token, g_name, g_tracks, g_username, getUsername, redirect_uri, spotifyLogin;
     g_name = 'My Special Playlist';
     client_id = 'ddc0558e4e404d179079f7cc33f0c6a9';
-    redirect_uri = window.location.href + 'spotify-callback';
-    console.log(redirect_uri);
+    if (location.hostname === "localhost") {
+      redirect_uri = window.location.href + 'spotify-callback.html';
+    } else {
+      redirect_uri = window.location.href + 'spotify-callback';
+    }
     g_access_token = '';
     g_username = '';
     g_tracks = [];
@@ -104,7 +107,7 @@
         return args[key] = val;
       });
       g_name = localStorage.getItem('spotifyplaylist-name');
-      g_tracks = [];
+      g_tracks = JSON.parse(localStorage.getItem('spotifyplaylist-tracks'));
       if (typeof args['access_token'] !== 'undefined') {
         g_access_token = args['access_token'];
       }
@@ -118,7 +121,7 @@
         });
       });
     };
-    spotifyLogin = function(callback, g_tracks) {
+    spotifyLogin = function(callback) {
       var url, w;
       url = 'https://accounts.spotify.com/authorize?client_id=' + client_id + '&response_type=token' + '&scope=playlist-read-private%20playlist-modify%20playlist-modify-private' + '&redirect_uri=' + encodeURIComponent(redirect_uri);
       localStorage.removeItem('spotifyplaylist-tracks');

@@ -6,13 +6,14 @@
   # Client ID from Spotify application here: https://developer.spotify.com
   client_id = 'ddc0558e4e404d179079f7cc33f0c6a9'
   # Make sure to set your redirect uri to:
-  redirect_uri = window.location.href + 'spotify-callback'
-  console.log(redirect_uri);
+  if location.hostname is "localhost"
+  	redirect_uri = window.location.href + 'spotify-callback.html'
+  else
+  	redirect_uri = window.location.href + 'spotify-callback'
 
 	# These will be set dynamically
   g_access_token = ''
   g_username = ''
-  # Set g_tracks to be ID from Spotify player iframe
   g_tracks = []
 
   getUsername = (callback) ->
@@ -89,6 +90,7 @@
       error: (r) ->
         callback null
 
+
   doit = ->
     # parse hash
     hash = location.hash.replace(/#/g, '')
@@ -101,7 +103,7 @@
       val = keyvalue.substring(idx + 1)
       args[key] = val
     g_name = localStorage.getItem('spotifyplaylist-name')
-    g_tracks = []
+    g_tracks = JSON.parse(localStorage.getItem('spotifyplaylist-tracks'))
     # console.log 'got args', args
     if typeof args['access_token'] != 'undefined'
       # got access token
@@ -117,7 +119,7 @@
           $('#creating').hide()
           $('#done').show()
 
-  spotifyLogin = (callback, g_tracks) ->
+  spotifyLogin = (callback) ->
     url = 'https://accounts.spotify.com/authorize?client_id=' + client_id + '&response_type=token' + '&scope=playlist-read-private%20playlist-modify%20playlist-modify-private' + '&redirect_uri=' + encodeURIComponent(redirect_uri)
     # remove old tracks if stored
     localStorage.removeItem('spotifyplaylist-tracks')
