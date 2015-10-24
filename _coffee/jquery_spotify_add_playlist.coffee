@@ -75,10 +75,9 @@
 
   addTracksToPlaylist = (username, playlist, tracks, callback) ->
     # console.log 'addTracksToPlaylist', username, playlist, tracks
-    url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks'
+    url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks' + '?uris=spotify:track:'+tracks;
     $.ajax url,
       method: 'POST'
-      data: JSON.stringify(tracks)
       dataType: 'text'
       headers:
         'Authorization': 'Bearer ' + g_access_token
