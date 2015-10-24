@@ -77,10 +77,9 @@
     };
     addTracksToPlaylist = function(username, playlist, tracks, callback) {
       var url;
-      url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks';
+      url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks' + '?uris=' + encodeURIComponent(tracks);
       return $.ajax(url, {
         method: 'POST',
-        data: JSON.stringify(tracks),
         dataType: 'text',
         headers: {
           'Authorization': 'Bearer ' + g_access_token,
@@ -129,7 +128,9 @@
       localStorage.setItem('spotifyplaylist-name', g_name);
       return w = window.open(url, 'asdf', 'WIDTH=400,HEIGHT=500');
     };
-    doit();
+    if ($('.spotify-callback').length) {
+      doit();
+    }
     return $('button').click(function(e) {
       g_tracks = $(this).data('track');
       spotifyLogin(g_tracks);

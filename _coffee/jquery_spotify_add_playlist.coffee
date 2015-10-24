@@ -48,10 +48,10 @@
             # set spotify_id to be the id of the existing playlist
             spotify_id = r.items[i].id
           i++
-        # if spotify_id is empty ('Essential Worship' playlist doesn't exist)
+        # if spotify_id is empty (playlist doesn't exist)
         if spotify_id.length == 0
           $('#creating h1').text('Creating Playlist')
-          # create the 'Essential Worship' playlist
+          # create the playlist
           $.ajax url,
             method: 'POST'
             data: JSON.stringify(
@@ -75,11 +75,9 @@
 
   addTracksToPlaylist = (username, playlist, tracks, callback) ->
     # console.log 'addTracksToPlaylist', username, playlist, tracks
-    url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks'
-    # ?uris='+encodeURIComponent(tracks.join(','));
+    url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks' + '?uris='+encodeURIComponent(tracks);
     $.ajax url,
       method: 'POST'
-      data: JSON.stringify(tracks)
       dataType: 'text'
       headers:
         'Authorization': 'Bearer ' + g_access_token
@@ -129,7 +127,8 @@
     localStorage.setItem 'spotifyplaylist-name', g_name
     w = window.open(url, 'asdf', 'WIDTH=400,HEIGHT=500')
 
-  doit()
+  if $('.spotify-callback').length
+  	doit()
 
   $('button').click (e) ->
 	  g_tracks = $(this).data('track')
