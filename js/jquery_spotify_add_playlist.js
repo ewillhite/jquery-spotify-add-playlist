@@ -77,9 +77,10 @@
     };
     addTracksToPlaylist = function(username, playlist, tracks, callback) {
       var url;
-      url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks' + '?uris=' + encodeURIComponent(tracks);
+      url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks';
       return $.ajax(url, {
         method: 'POST',
+        data: JSON.stringify(tracks),
         dataType: 'text',
         headers: {
           'Authorization': 'Bearer ' + g_access_token,
