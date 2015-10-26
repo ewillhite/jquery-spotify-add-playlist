@@ -13,8 +13,6 @@ Thumbs.db
 
 # Grunt and SASS #
 ##########
-Gruntfile.js
-package.json
 .sass-cache
 node_modules
 bourbon
