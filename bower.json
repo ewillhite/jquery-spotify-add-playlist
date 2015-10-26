@@ -25,7 +25,7 @@
     "test",
     "tests"
   ],
-  "dependencies": [
+  "dependencies": {
     "jquery": ">= 1.4"
-  ]
+  }
 }
