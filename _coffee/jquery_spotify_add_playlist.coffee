@@ -1,22 +1,10 @@
 # namespace jQuery
 (($) ->
 
-  # playlist name
-  g_name = 'My Special Playlist'
-  # Client ID from Spotify application here: https://developer.spotify.com
-  client_id = 'ddc0558e4e404d179079f7cc33f0c6a9'
-  # Make sure to set your redirect uri to:
-  if location.hostname is "localhost"
-  	redirect_uri = window.location.href + 'spotify-callback.html'
-  else
-  	redirect_uri = window.location.href + 'spotify-callback'
+	g_username = ''
+	g_access_token = ''
 
-	# These will be set dynamically
-  g_access_token = ''
-  g_username = ''
-  g_tracks = []
-
-  getUsername = (callback) ->
+	getUsername = (callback) ->
     # console.log 'getUsername'
     url = 'https://api.spotify.com/v1/me'
     $.ajax url,
@@ -44,7 +32,7 @@
         spotify_id = ''
         while i < r.items.length
           # If playlist exists
-          if r.items[i].name == g_name
+          if r.items[i].name == name
             # set spotify_id to be the id of the existing playlist
             spotify_id = r.items[i].id
           i++
@@ -66,7 +54,7 @@
               callback r.id
             error: (r) ->
               callback null
-        # 'Essential Worship' playlist exists, so set playlist ID to that one
+        # Playlist exists, so set playlist ID to that one
         else
           $('#creating h1').text('Found Playlist')
           callback spotify_id
@@ -88,14 +76,13 @@
       error: (r) ->
         callback null
 
-
-  doit = ->
-    # parse hash
-    hash = location.hash.replace(/#/g, '')
-    all = hash.split('&')
-    args = {}
-    # console.log 'all', all
-    all.forEach (keyvalue) ->
+	doit = ->
+		# parse hash
+		hash = location.hash.replace(/#/g, '')
+		all = hash.split('&')
+		args = {}
+		# console.log 'all', all
+		all.forEach (keyvalue) ->
       idx = keyvalue.indexOf('=')
       key = keyvalue.substring(0, idx)
       val = keyvalue.substring(idx + 1)
@@ -117,7 +104,10 @@
           $('#creating').hide()
           $('#done').show()
 
-  spotifyLogin = (callback) ->
+	if $('.spotify-callback').length
+  	doit()
+
+	spotifyLogin = (g_tracks, client_id, redirect_uri, g_name) ->
     url = 'https://accounts.spotify.com/authorize?client_id=' + client_id + '&response_type=token' + '&scope=playlist-read-private%20playlist-modify%20playlist-modify-private' + '&redirect_uri=' + encodeURIComponent(redirect_uri)
     # remove old tracks if stored
     localStorage.removeItem('spotifyplaylist-tracks')
@@ -127,12 +117,23 @@
     localStorage.setItem 'spotifyplaylist-name', g_name
     w = window.open(url, 'asdf', 'WIDTH=400,HEIGHT=500')
 
-  if $('.spotify-callback').length
-  	doit()
+	$.fn.spotify_add_to_playlist = (options) ->
+		settings = $.extend({
+		  playlist_name: '',
+		  client_id: '',
+		  track:''
+	  }, options)
+	  @each ->
+	  	g_name = settings.playlist_name
+	  	client_id = settings.client_id
+	  	g_tracks = settings.track
+	  	if location.hostname == "localhost"
+	  		redirect_uri = window.location.href + 'spotify-callback.html'
+	  	else
+	  		redirect_uri = window.location.href + 'spotify-callback'
+	  	spotifyLogin(g_tracks, client_id, redirect_uri, g_name)
+	  	return
 
-  $('button').click (e) ->
-	  g_tracks = $(this).data('track')
-	  spotifyLogin g_tracks
-	  e.preventDefault()
+  	this
 
 ) jQuery

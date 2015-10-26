@@ -1,16 +1,8 @@
 (function() {
   (function($) {
-    var addTracksToPlaylist, client_id, createPlaylist, doit, g_access_token, g_name, g_tracks, g_username, getUsername, redirect_uri, spotifyLogin;
-    g_name = 'My Special Playlist';
-    client_id = 'ddc0558e4e404d179079f7cc33f0c6a9';
-    if (location.hostname === "localhost") {
-      redirect_uri = window.location.href + 'spotify-callback.html';
-    } else {
-      redirect_uri = window.location.href + 'spotify-callback';
-    }
-    g_access_token = '';
+    var addTracksToPlaylist, createPlaylist, doit, g_access_token, g_username, getUsername, spotifyLogin;
     g_username = '';
-    g_tracks = [];
+    g_access_token = '';
     getUsername = function(callback) {
       var url;
       url = 'https://api.spotify.com/v1/me';
@@ -43,7 +35,7 @@
           i = 0;
           spotify_id = '';
           while (i < r.items.length) {
-            if (r.items[i].name === g_name) {
+            if (r.items[i].name === name) {
               spotify_id = r.items[i].id;
             }
             i++;
@@ -94,7 +86,7 @@
       });
     };
     doit = function() {
-      var all, args, hash;
+      var all, args, g_name, g_tracks, hash;
       hash = location.hash.replace(/#/g, '');
       all = hash.split('&');
       args = {};
@@ -120,7 +112,10 @@
         });
       });
     };
-    spotifyLogin = function(callback) {
+    if ($('.spotify-callback').length) {
+      doit();
+    }
+    spotifyLogin = function(g_tracks, client_id, redirect_uri, g_name) {
       var url, w;
       url = 'https://accounts.spotify.com/authorize?client_id=' + client_id + '&response_type=token' + '&scope=playlist-read-private%20playlist-modify%20playlist-modify-private' + '&redirect_uri=' + encodeURIComponent(redirect_uri);
       localStorage.removeItem('spotifyplaylist-tracks');
@@ -128,14 +123,27 @@
       localStorage.setItem('spotifyplaylist-name', g_name);
       return w = window.open(url, 'asdf', 'WIDTH=400,HEIGHT=500');
     };
-    if ($('.spotify-callback').length) {
-      doit();
-    }
-    return $('button').click(function(e) {
-      g_tracks = $(this).data('track');
-      spotifyLogin(g_tracks);
-      return e.preventDefault();
-    });
+    return $.fn.spotify_add_to_playlist = function(options) {
+      var settings;
+      settings = $.extend({
+        playlist_name: '',
+        client_id: '',
+        track: ''
+      }, options);
+      this.each(function() {
+        var client_id, g_name, g_tracks, redirect_uri;
+        g_name = settings.playlist_name;
+        client_id = settings.client_id;
+        g_tracks = settings.track;
+        if (location.hostname === "localhost") {
+          redirect_uri = window.location.href + 'spotify-callback.html';
+        } else {
+          redirect_uri = window.location.href + 'spotify-callback';
+        }
+        spotifyLogin(g_tracks, client_id, redirect_uri, g_name);
+      });
+      return this;
+    };
   })(jQuery);
 
 }).call(this);

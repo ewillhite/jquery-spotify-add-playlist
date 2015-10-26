@@ -30,5 +30,16 @@
 	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery_spotify_add_playlist.js"></script>
+	<script>
+		$('button').click(function(e) {
+			var track = $(this).data('track');
+			$(this).spotify_add_to_playlist({
+			   playlist_name:'Test 2',
+			   client_id:'ddc0558e4e404d179079f7cc33f0c6a9',
+			   track: track
+			});
+			e.preventDefault();
+		});
+	</script>
 </body>
 </html>
