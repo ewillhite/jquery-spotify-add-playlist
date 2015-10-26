@@ -27,6 +27,6 @@ $('button').click(function(e) {
 });
 ```
 
-Credits: This plugin based on development done for [Essential Worship](http://essentialworship.com/) at [Centresource](http://centresource.com).
+## Credits
 
-Note: this plugin is heavily based on the good work of https://github.com/possan/playlistcreator-example
+This plugin based on development done for [Essential Worship](http://essentialworship.com/) at [Centresource](http://centresource.com). It was also inspired heavily by the good work of https://github.com/possan/playlistcreator-example
