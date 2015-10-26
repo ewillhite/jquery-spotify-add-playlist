@@ -1,7 +1,7 @@
 # jQuery Spotify Add to Playlist Plugin
 Simple plugin to allow a user to add a track to a Spotify playlist. If the playlist doesn't exist, it gets created and if it already exists, the song just gets added to it.
 
-See demo here: http://ewillhite.github.io/jquery-spotify-add-playlist/
+Demo: http://ewillhite.github.io/jquery-spotify-add-playlist/
 
 ## Usage
 
