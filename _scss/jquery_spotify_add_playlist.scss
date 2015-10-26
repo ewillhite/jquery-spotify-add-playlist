@@ -82,6 +82,12 @@ main {
 	max-width: 40em;
 	text-align:center;
 
+	h1 {
+		border:1px solid #ccc;
+		color: #ccc;
+		padding: 2%;
+	}
+
 	ul {
 		list-style:none;
 		margin:0;

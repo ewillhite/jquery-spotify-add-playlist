@@ -13,6 +13,7 @@
 		</div>
 	</header>
 	<main>
+		<h1 contentEditable="true">Enter Playlist Title:</h1>
 		<ul>
 			<li>
 				<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A6ToM0uwxtPKo9CMpbPGYvM" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
@@ -31,14 +32,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery_spotify_add_playlist.js"></script>
 	<script>
+		// Spotify add Playlist functionality
 		$('button').click(function(e) {
 			var track = $(this).data('track');
+			var playlist = $('main h1').text();
 			$(this).spotify_add_to_playlist({
-			   playlist_name:'Test 2',
+			   playlist_name:playlist,
 			   client_id:'ddc0558e4e404d179079f7cc33f0c6a9',
 			   track: track
 			});
 			e.preventDefault();
+		});
+		// Editable Playlist
+		$('main h1').one("click", function() {
+			$('main h1').text('').css('color','#000');
 		});
 	</script>
 </body>
