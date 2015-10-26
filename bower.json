@@ -1,0 +1,31 @@
+{
+  "name": "jquery-spotify-add-playlist",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ewillhite/jquery-spotify-add-playlist",
+  "authors": [
+    "Evan Willhite <ewillhite@centresource.com>"
+  ],
+  "description": "jQuery plugin to allow a user to add a track to a Spotify playlist",
+  "main": "js/jquery_spotify_add_playlist.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "spotify",
+    "playlist",
+    "track",
+    "song"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+  "dependencies": {
+    "jquery": ">= 1.4"
+  }
+}
