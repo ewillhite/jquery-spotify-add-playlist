@@ -17,9 +17,9 @@ $('button').click(function(e) {
 	var track = $(this).data('track');
 	$(this).spotify_add_to_playlist({
 		// Playlist Name - can be whatever you like
-		playlist_name:'Test 2',
+		playlist_name:'My Funky Playlist',
 		// Client ID from your Spotify application in step 2
-		client_id:'ddc0558e4e404d179079f7cc33f0c6a9',
+		client_id:'',
 		// Track Spotify ID
 		track: track
 	});
