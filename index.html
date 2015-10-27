@@ -1,9 +1,11 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" />
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/jquery_spotify_add_playlist.css" />
 </head>
-<body>
+<body class="type-system-slab">
 	<header>
 		<div class="hero-inner">
 			<div class="hero-copy">
@@ -13,7 +15,7 @@
 		</div>
 	</header>
 	<main>
-		<h1 contentEditable="true">Enter Playlist Title:</h1>
+		<input type="text" id="playlist" placeholder="Enter Playlist Title:">
 		<ul>
 			<li>
 				<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A6ToM0uwxtPKo9CMpbPGYvM" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
@@ -35,17 +37,13 @@
 		// Spotify add Playlist functionality
 		$('button').click(function(e) {
 			var track = $(this).data('track');
-			var playlist = $('main h1').text();
+			var playlist = $('#playlist').val();
 			$(this).spotify_add_to_playlist({
 			   playlist_name:playlist,
 			   client_id:'ddc0558e4e404d179079f7cc33f0c6a9',
 			   track: track
 			});
 			e.preventDefault();
-		});
-		// Editable Playlist
-		$('main h1').one("click", function() {
-			$('main h1').text('').css('color','#000');
 		});
 	</script>
 </body>

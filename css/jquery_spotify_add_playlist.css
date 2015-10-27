@@ -4,24 +4,119 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+.type-system-slab {
+  font-family: "Roboto Slab", serif;
+  text-align: left; }
+  .type-system-slab::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .type-system-slab h1, .type-system-slab h2, .type-system-slab h3, .type-system-slab p {
+    margin: 0; }
+  .type-system-slab hr {
+    border-bottom: 1px solid #DDD;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: 1.5em 0; }
+  .type-system-slab p {
+    color: #333;
+    line-height: 1.5em; }
+  .type-system-slab a {
+    color: #648f00;
+    text-decoration: none; }
+  .type-system-slab .type {
+    border-bottom: 1px solid;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-bottom: 2em;
+    padding: 0.1em 0;
+    text-align: left;
+    text-transform: uppercase; }
+  .type-system-slab h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 0.6em; }
+    @media screen and (min-width: 40em) {
+      .type-system-slab h1 {
+        font-size: 2.4em; } }
+  .type-system-slab h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-bottom: 1.2em; }
+    @media screen and (min-width: 40em) {
+      .type-system-slab h2 {
+        font-size: 1.3em; } }
+  .type-system-slab code {
+    background: #F7F7F7;
+    border-radius: 4.5px;
+    border: 1px solid #E0E0E0;
+    font-size: 0.8em;
+    font-style: normal;
+    padding: 0.1em 0.4em;
+    white-space: nowrap; }
+  .type-system-slab h3 {
+    font-family: "Roboto Slab", serif;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.4em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase; }
+  .type-system-slab p.date {
+    color: rgba(51, 51, 51, 0.4);
+    font-family: "Roboto Slab", serif;
+    font-size: 0.8em;
+    margin-bottom: 0.5em; }
+  .type-system-slab p {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    letter-spacing: 1;
+    margin-bottom: 1.5em; }
+    .type-system-slab p span {
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase; }
+  .type-system-slab a.read-more {
+    display: inline-block;
+    font-family: "Roboto Slab", serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 0.2em;
+    position: relative;
+    text-transform: uppercase; }
+    .type-system-slab a.read-more span {
+      font-size: 1.8em;
+      position: absolute;
+      right: -12px;
+      top: -2px; }
+  .type-system-slab hr {
+    width: 3em; }
+  .type-system-slab p.author {
+    font-family: "Roboto Slab", serif; }
+
 a {
-  color: #2EBD59; }
+  color: #648f00; }
 
 button {
-  background-color: #2EBD59;
+  background: url(../img/add_to_playlist-black.svg) no-repeat scroll 0 0;
+  background: url(../img/add_to_playlist-green.svg) no-repeat scroll 0 0;
   border: none;
-  color: #181818;
-  font-weight: bold;
-  padding: 4.8% 7%; }
+  color: #282828;
+  height: 0;
+  overflow: hidden;
+  padding-top: 75px; }
   button:hover {
-    background-color: #181818;
-    color: #2EBD59; }
+    background: url(../img/add_to_playlist-black.svg) no-repeat scroll 0 0; }
 
 header {
-  background-color: #181818;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/line_diagonal2.png"), -webkit-linear-gradient(-450deg, #282828, #282828), center no-repeat #282828 scroll;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/line_diagonal2.png"), linear-gradient(180deg, #282828, #282828), center no-repeat #282828 scroll;
   padding-bottom: 3em; }
   header .hero-logo img {
     height: 4em;
@@ -59,32 +154,53 @@ header {
             font-size: 1.1em;
             max-width: 40%; } }
 
-main {
+.type-system-slab main {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   margin: 2em auto;
   max-width: 40em;
   text-align: center; }
-  main::after {
+  .type-system-slab main::after {
     clear: both;
     content: "";
     display: table; }
-  main h1 {
-    border: 1px solid #ccc;
-    color: #ccc;
-    padding: 2%; }
-  main ul {
+  .type-system-slab main input {
+    border: 2px solid #648f00;
+    color: #648f00;
+    font-size: 1.7em;
+    opacity: .5;
+    padding: 3%;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%; }
+    .type-system-slab main input::-webkit-input-placeholder {
+      color: #648f00; }
+    .type-system-slab main input::-moz-placeholder {
+      color: #648f00; }
+    .type-system-slab main input:-moz-placeholder {
+      color: #648f00; }
+    .type-system-slab main input:-ms-input-placeholder {
+      color: #648f00; }
+    .type-system-slab main input:focus {
+      opacity: 1; }
+  .type-system-slab main ul {
     list-style: none;
     margin: 0;
     padding: 0; }
-  main li {
+  .type-system-slab main li {
     margin: 1em 0;
     overflow: hidden; }
-  main button, main iframe {
+  .type-system-slab main button, .type-system-slab main iframe {
     display: block;
     float: left;
     margin: 0 1%;
     width: 48%; }
+
+.spotify-callback {
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/line_diagonal2.png"), -webkit-linear-gradient(-450deg, #282828, #282828), center no-repeat #282828 scroll;
+  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/line_diagonal2.png"), linear-gradient(180deg, #282828, #282828), center no-repeat #282828 scroll;
+  color: #fff;
+  padding: 47% 0; }
 
 /*# sourceMappingURL=jquery_spotify_add_playlist.css.map */

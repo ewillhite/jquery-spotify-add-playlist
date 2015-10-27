@@ -1,14 +1,15 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
+@import "typography";
+@import "mixins";
 
-$bg-color: #181818;
+$bg-color: #282828;
 $base-border-radius: 3px !default;
-$action-color: #2EBD59 !default;
+$action-color: rgb(100, 143, 0) !default;
 $large-screen: em(860) !default;
 $hero-background-top: #7F99BE; 
 $hero-background-bottom: #20392B;
 $hero-color: white;
 $gradient-angle: 10deg;
+
 
 // General
 a {
@@ -16,24 +17,22 @@ a {
 }
 
 button {
-	background-color:$action-color;
+	background:url(../img/add_to_playlist-black.svg) no-repeat scroll 0 0;
+	background:url(../img/add_to_playlist-green.svg) no-repeat scroll 0 0;
 	border:none;
 	color:$bg-color;
-	font-weight:bold;
-	padding:4.8% 7%;
+	height:0;
+	overflow:hidden;
+	padding-top: 75px;
 
 	&:hover {
-		background-color:$bg-color;
-		color: $action-color;
+		background:url(../img/add_to_playlist-black.svg) no-repeat scroll 0 0;
 	}
 }
 
 // Header
-header {  
-  background-color: $bg-color;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+header {
+	@include texture(180deg, $bg-color, $bg-color, 63, 1); 
   padding-bottom: 3em;
 
   .hero-logo img {
@@ -76,16 +75,29 @@ header {
 }
 
 // Main
-main {
+.type-system-slab main {
 	@include outer-container;
 	margin:2em auto;
 	max-width: 40em;
 	text-align:center;
 
-	h1 {
-		border:1px solid #ccc;
-		color: #ccc;
-		padding: 2%;
+	input {
+		border:2px solid $action-color;
+		color: $action-color;
+		font-size: 1.7em;
+		opacity: .5;
+		padding: 3%;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+
+		@include placeholder {
+			color: $action-color;
+		}
+
+		&:focus {
+			opacity: 1;
+		}
 	}
 
 	ul {
@@ -105,4 +117,11 @@ main {
 		margin: 0 1%;
 		width: 48%;
 	}
+}
+
+// Callback page
+.spotify-callback {
+	@include texture(180deg, $bg-color, $bg-color, 63, 1);
+	color:#fff;
+	padding: 47% 0;
 }
