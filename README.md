@@ -8,7 +8,8 @@ Demo: http://ewillhite.github.io/jquery-spotify-add-playlist/
 1. Install using bower or make sure you install dependency (jQuery >=1.4)
 2. Create a Spotify application here: https://developer.spotify.com/
 3. Add a redirect uri to your Spotify app that is [yourwebsite.com]/spotify-callback
-4. Invoke the plugin:
+4. Include plugin after jQuery
+5. Invoke the plugin:
 
 ```
 // Click function just used as an example
