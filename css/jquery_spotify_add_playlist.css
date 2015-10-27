@@ -52,14 +52,19 @@ html {
     @media screen and (min-width: 40em) {
       .type-system-slab h2 {
         font-size: 1.3em; } }
+  .type-system-slab pre {
+    line-height: 1em;
+    margin: 0 0 1em;
+    overflow: visible;
+    padding: .2em 1em 0; }
   .type-system-slab code {
     background: #F7F7F7;
     border-radius: 4.5px;
     border: 1px solid #E0E0E0;
+    display: block;
     font-size: 0.8em;
     font-style: normal;
-    padding: 0.1em 0.4em;
-    white-space: nowrap; }
+    padding: 1em 1em; }
   .type-system-slab h3 {
     font-family: "Roboto Slab", serif;
     font-size: 1em;
@@ -165,6 +170,9 @@ header {
     clear: both;
     content: "";
     display: table; }
+  .type-system-slab main h1 {
+    font-size: 2em;
+    text-align: left; }
   .type-system-slab main input {
     border: 2px solid #648f00;
     color: #648f00;
@@ -199,6 +207,11 @@ header {
     float: left;
     margin: 0 1%;
     width: 48%; }
+  .type-system-slab main div {
+    margin-top: 50px;
+    text-align: left; }
+    .type-system-slab main div .no-margin {
+      margin-bottom: 0; }
 
 .spotify-callback {
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/line_diagonal2.png"), -webkit-linear-gradient(-450deg, #282828, #282828), center no-repeat #282828 scroll;

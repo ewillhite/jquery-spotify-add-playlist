@@ -3,6 +3,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" />
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+  <link href="css/vendor/prism.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/jquery_spotify_add_playlist.css" />
 </head>
 <body class="type-system-slab">
@@ -30,9 +31,38 @@
 				<button data-track="3A0wJoRiX5K5BxlqZTolB2LD">Add This Song to Playlist</button>
 			</li>
 		</ul>
+		<div>
+			<h1>Usage:</h1>
+			<h2>1. Install library</h2>
+			<pre>
+				<code class="language-javascript">bower install jquery-spotify-add-playlist</code>
+			</pre>
+			<h2>2. Create a Spotify Application: https://developer.spotify.com/</h2>
+			<h2>3. Add a redirect URI to your Spotify app that is [yoururl.com]/spotify-callback</h2>
+			<h2>4. Invoke the plugin:</h2>
+			<pre>
+				<code class="language-javascript">// Click function just used as an example<br>
+$('button').click(function(e) {<br>
+  // Set Track ID<br>
+  var track = $(this).data('track');<br>
+  $(this).spotify_add_to_playlist({<br>
+    // Playlist Name - can be whatever you like<br>
+    playlist_name:'My Funky Playlist',<br>
+    // Client ID from your Spotify application in step 2<br>
+    client_id:'',<br>
+    // Track Spotify ID<br>
+    track: track<br>
+  });<br>
+  e.preventDefault();<br>
+});</code>
+			</pre>
+			<h1>Credits:</h1>
+			<p>This plugin based on development done for <a href="http://essentialworship.com/">Essential Worship</a> at <a href="http://centresource.com/">Centresource</a>. It was also inspired heavily by the good work of <a href="https://github.com/possan/playlistcreator-example">https://github.com/possan/playlistcreator-example</a></p>
+		</div>
 	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery_spotify_add_playlist.js"></script>
+	<script src="js/vendor/prism.js"></script>
 	<script>
 		// Spotify add Playlist functionality
 		$('button').click(function(e) {

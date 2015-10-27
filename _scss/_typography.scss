@@ -76,14 +76,21 @@
     }
   }
 
+  pre {
+  	line-height: 1em;
+  	margin: 0 0 1em;
+  	overflow:visible;
+  	padding: .2em 1em 0;
+  }
+
   code {
     background: #F7F7F7;
     border-radius: $base-border-radius * 1.5;
     border: 1px solid #E0E0E0;
+    display: block;
     font-size: 0.8em;
     font-style: normal;
-    padding: 0.1em 0.4em;
-    white-space: nowrap;
+    padding: 1em 1em;
   }
 
   h3 {

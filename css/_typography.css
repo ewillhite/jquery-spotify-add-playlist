@@ -52,14 +52,19 @@ html {
     @media screen and (min-width: 40em) {
       .type-system-slab h2 {
         font-size: 1.3em; } }
+  .type-system-slab pre {
+    line-height: 1em;
+    margin: 0 0 1em;
+    overflow: visible;
+    padding: .2em 1em 0; }
   .type-system-slab code {
     background: #F7F7F7;
     border-radius: 4.5px;
     border: 1px solid #E0E0E0;
+    display: block;
     font-size: 0.8em;
     font-style: normal;
-    padding: 0.1em 0.4em;
-    white-space: nowrap; }
+    padding: 1em 1em; }
   .type-system-slab h3 {
     font-family: "Roboto Slab", serif;
     font-size: 1em;
