@@ -6,7 +6,7 @@
     "Evan Willhite <ewillhite@centresource.com>"
   ],
   "description": "jQuery plugin to allow a user to add a track to a Spotify playlist",
-  "main": "js/jquery_spotify_add_playlist.js",
+  "main": "js/jquery_spotify_add_playlist.min.js",
   "moduleType": [
     "globals"
   ],

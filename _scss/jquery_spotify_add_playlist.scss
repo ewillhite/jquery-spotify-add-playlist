@@ -90,18 +90,13 @@ header {
 		border:2px solid $action-color;
 		color: $action-color;
 		font-size: 1.7em;
-		opacity: .5;
 		padding: 3%;
 		text-align: center;
 		width: 100%;
 
 		@include placeholder {
-			color: $action-color;
+			color: #B2C780;
 			text-transform: uppercase;
-		}
-
-		&:focus {
-			opacity: 1;
 		}
 	}
 

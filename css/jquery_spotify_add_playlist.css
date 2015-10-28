@@ -177,24 +177,21 @@ header {
     border: 2px solid #648f00;
     color: #648f00;
     font-size: 1.7em;
-    opacity: .5;
     padding: 3%;
     text-align: center;
     width: 100%; }
     .type-system-slab main input::-webkit-input-placeholder {
-      color: #648f00;
+      color: #B2C780;
       text-transform: uppercase; }
     .type-system-slab main input::-moz-placeholder {
-      color: #648f00;
+      color: #B2C780;
       text-transform: uppercase; }
     .type-system-slab main input:-moz-placeholder {
-      color: #648f00;
+      color: #B2C780;
       text-transform: uppercase; }
     .type-system-slab main input:-ms-input-placeholder {
-      color: #648f00;
+      color: #B2C780;
       text-transform: uppercase; }
-    .type-system-slab main input:focus {
-      opacity: 1; }
   .type-system-slab main ul {
     list-style: none;
     margin: 0;
